@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Data Widget</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+        .widget {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+            max-width: 360px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input:focus {
+            border-color: #007bff;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        @media (max-width: 400px) {
+            .widget {
+                padding: 15px;
+            }
+            h2 {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="widget">
+        <h2>Customer Purchase Entry</h2>
+        <!-- Replace with your Google Form's formResponse URL -->
+        <form method="POST" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdjBu3NXkeo4_5wevW3jiZRZ3J5YYb1y8BUhoYDXt6uUOwJQQ/formResponse">
+            <div class="form-group">
+                <label for="purchaseDate">Date of Purchase *</label>
+                <!-- Replace entry.534200086 with your Date entry ID -->
+                <input type="date" id="purchaseDate" name="entry.534200086" max="2025-04-08" required>
+            </div>
+            <div class="form-group">
+                <label for="fullName">Name *</label>
+                <!-- Replace entry.1682452987 with your Name entry ID -->
+                <input type="text" id="fullName" name="entry.1682452987" placeholder="e.g., John Doe" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number *</label>
+                <!-- Replace entry.1436447325 with your Phone entry ID -->
+                <input type="tel" id="phoneNumber" name="entry.1436447325" pattern="[0-9]{10}" placeholder="e.g., 1234567890" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount of Goods Purchased *</label>
+                <!-- Replace entry.218375404 with your Amount entry ID -->
+                <input type="number" id="amount" name="entry.218375404" min="1" placeholder="e.g., 5" required>
+            </div>
+            <div class="form-group">
+                <label for="site">Site Where Goods Were Used *</label>
+                <!-- Replace entry.244362922 with your Site entry ID -->
+                <input type="text" id="site" name="entry.244362922" placeholder="e.g., Warehouse A" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
